@@ -177,6 +177,9 @@
             transition: all 0.3s ease;
             font-size: 1em;
             text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         .option:hover {
@@ -567,7 +570,8 @@
             question.options.forEach((option, index) => {
                 const optionElement = document.createElement('div');
                 optionElement.className = 'option';
-                optionElement.textContent = option;
+                const letters = ['A', 'B', 'C', 'D'];
+                optionElement.innerHTML = `<strong>${letters[index]})</strong> ${option}`;
                 optionElement.onclick = () => selectOption(index, optionElement);
                 optionsContainer.appendChild(optionElement);
             });
@@ -656,5 +660,7 @@
             document.getElementById('startScreen').classList.remove('hidden');
         }
     </script>
+</body>
+</html>
 </body>
 </html>
